@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>北とぴあ国際音楽祭2025 北とぴあ館内&近隣の店舗・グルメ情報</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Helvetica Neue', 'Arial', 'Hiragino Sans', 'Meiryo', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: #d9534f;
+            margin: 0;
+            font-size: 1.5em;
+            font-weight: bold;
+            line-height: 1.8;
+        }
+
+        h2 {
+            font-weight: normal;
+            color: #555;
+            margin: 5px 0 1px 0;
+            font-size: 1.5em;
+            line-height: 1.8;
+        }
+
+        /* Top Section Layout */
+        .top-section {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+            flex-wrap: wrap; /* For responsiveness */
+        }
+
+
+        .content-column {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .content-column img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+        }
+
+
+        .intro, .notes {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        /* Notes List */
+        .notes ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .notes li {
+            padding: 5px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .notes li::before {
+            content: "●";
+            color: #d9534f;
+            margin-right: 10px;
+        }
+
+        /* Coupon Grid */
+        .coupon-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            row-gap: 20px;
+            column-gap: 20px;
+            align-items: start;
+        }
+        
+        /* Individual Coupon Card */
+        .coupon {
+            border: 1.5px solid #aaa;
+            border-radius: 10px;
+            padding: 15px;
+            position: relative;
+            background-color: #fdfdfd;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .coupon-number {
+            position: absolute;
+            top: -1px;
+            left: -1px;
+            background-color: #5bc0de;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 8px 0 8px 0;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .coupon-header {
+            text-align: center;
+            margin-top: 15px;
+        }
+        
+        .store-name {
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #337ab7;
+            margin: 20px 0 10px;
+        }
+        
+
+        .photo-placeholder,
+        .coupon-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin: 10px 0 20px 0;
+        }
+
+        .photo-placeholder {
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #aaa;
+            text-align: center;
+        }
+
+
+        .offer {
+            text-align: center;
+            margin: 20px 0 5px;
+            padding: 15px;
+            background-color: #fff9e6;
+            border-radius: 5px;
+        }
+
+        .offer::before {
+            content: '【優待クーポン実施店】';
+            display: block;
+            font-weight: bold;
+            color: #d9534f;
+            margin-bottom: 10px;
+        }
+
+        .offer-main {
+            font-size: 1.0em;
+            font-weight: bold;
+            color: #d9534f;
+            margin: 0;
+        }
+
+        .offer-conditions {
+            margin-top: 5px;
+            font-size: 0.9em;
+            font-weight: bold;
+            color: #777;
+        }
+        
+        .catchphrase {
+            font-size: 1.0em;
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+            margin-top: 5px;
+            line-height: 1.6;
+        }
+        
+
+        .kirin-city-catchphrase {
+            font-size: 0.9em;
+        }
+
+        
+        .store-info {
+            margin-top: 10px;
+        }
+
+        .store-info p {
+            margin: 5px 0;
+            font-size: 0.9em;
+            line-height: 1.5;
+        }
+
+        .store-info strong {
+            font-weight: bold;
+        }
+
+        .store-info a {
+            font-size: 0.85em;
+            word-break: break-all;
+        }
+
+        .usage-rules {
+            margin-top: 15px;
+            padding-top: 10px;
+            border-top: 1px solid #eee;
+            font-size: 0.7em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+        
+        .usage-rules .limit {
+            font-weight: bold;
+            background-color: #eee;
+            padding: 3px 8px;
+            border-radius: 3px;
+            white-space: nowrap;
+        }
+        
+        /* ★★★ 修正点1: 日付のテキストを削除 ★★★ */
+        .usage-rules .timing.order-timing::before {
+            content: '※注文時にこの画面をご提示ください';
+            color: #d9534f;
+            line-height: 1.5;
+            display: block;
+            font-size: 1.1em;
+        }
+        
+        /* ★★★ 修正点1: 日付のテキストを削除 ★★★ */
+        .usage-rules .timing.payment-timing::before {
+            content: '※会計時にこの画面をご提示ください';
+            color: #d9534f;
+            line-height: 1.5;
+            display: block;
+            font-size: 1.1em;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px solid #e0e0e0;
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .store-only .offer,
+        .store-only .usage-rules {
+            display: none;
+        }
+
+        .catchphrase + p {
+            margin-top: 25px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>北とぴあ国際音楽祭2025</h1>
+            <h2>北とぴあ館内&近隣の店舗・グルメ情報</h2>
+        </header>
+        
+        <div class="top-section">
+            <div class="content-column">
+                <section class="intro">
+                    <p>北とぴあ国際音楽祭2025にご来場いただき、誠にありがとうございます。北とぴあ館内と近隣のお店をご紹介します。ぜひこの機会に王子周辺を散策してみてください。店舗によっては北とぴあ国際音楽祭のチケット提示で優待割引サービスを実施しています！</p>
+                </section>
+        
+                <section class="notes">
+                    <ul>
+                        <li>北とぴあ国際音楽祭2025会期以外はご使用できません。</li>
+                        <li>ラストオーダーの時間は各店舗にお問い合わせください。</li>
+                        <li>1回のご来店につき、お一人様1回のご使用とさせていただきます。</li>
+                        <li>ほかの優待サービスとの併用はできません。</li>
+                        <li>サービスの詳細につきましては各店舗までお問い合わせください。</li>
+                    </ul>
+                </section>
+            </div>
+            <div class="content-column">
+            <img src="https://drive.google.com/uc?export=view&id=1MGlbPOG8yypaMF-uC3sK_LhBFsukEQe8" alt="北とぴあ近隣マップ">
+            </div>
+        </div>
+
+        <main class="coupon-grid">
+
+
+
+            <article class="coupon">
+                <span class="coupon-number">1</span>
+                <div class="coupon-header">
+                    <h3 class="store-name">VIEW&KITCHEN QUAD17</h3>
+                </div>
+                <img src="http://kitabunka.or.jp/wp/wp-content/uploads/QUAD.jpg" alt="VIEW&KITCHEN QUAD17" class="coupon-image">
+                <div class="offer">
+                    <p class="offer-main">飲食料 5% 割引（コース利用を除く）</p>
+                    <p class="offer-conditions">10:00～17:00のご利用のみ</p>
+                </div>
+                <div class="store-info">
+                    <p class="catchphrase">​東京都北区王子のランドマーク北とぴあ17Fの展望レストラン</p>
+                    <p><strong>住所:</strong> 北区王子1-11-1 北とぴあ 17階</p>
+                    <p><strong>TEL:</strong> 070-9030-3172</p>
+                    <p><strong>営業時間:</strong><br>
+                        cafe&lunchtime 10:00~17:00<br>
+                        完全予約制 17:00～
+                    </p>
+                    <p><strong>HP:</strong> <a href="https://www.quad17.com/" target="_blank" rel="noopener noreferrer">https://www.quad17.com/</a></p>
+                </div>
+                <div class="usage-rules">
+                    <span class="limit">チケット1枚で1グループ</span>
+                    <span class="timing order-timing"></span>
+                </div>
+            </article>
+
+            <article class="coupon store-only">
+                <span class="coupon-number">2</span>
+                <div class="coupon-header">
+                    <h3 class="store-name">キリンシティ 王子店</h3>
+                </div>
+                <img src="http://kitabunka.or.jp/wp/wp-content/uploads/キリンシティキービジュアル.jpg" alt="キリンシティ王子" class="coupon-image">
+                <p class="catchphrase kirin-city-catchphrase">「キリンシティは、様々なビールと季節の料理が楽しめるビアレストラン。 こだわりの2回注ぎでご提供する「キリン一番搾り」やスプリングバレーのクラフトビールをご用意。そして創業当初から続く、ふわふわ泡のドイツ伝来3回注ぎの「ご馳走ビール」。ぜひお気に入りの1杯を見つけてみてください♪ 料理は、定番のソーセージやジャーマンポテトに加え、月毎に野菜や魚介などの素材が変わる『おすすめ素材』や3か月限定『季節の特別メニュー』など。 おひとり様でも、グループでも、お気軽にご利用ください！」</p>
+                <div class="store-info">
+                    <p><strong>住所:</strong> 北区王子1-11-1 北とぴあ1階</p>
+                    <p><strong>TEL:</strong>03-5902-5101</p>
+                    <p><strong>営業時間:</strong> 月曜日 - 土曜日 11:30 - 22:30, 日曜日 11:30 - 22:00 祝日11:30-22:00 （L.O.閉店の30分前）</p>
+                    <p><strong>HP:</strong> <a href="https://www.kirincity.co.jp/shop/oji.html" target="_blank" rel="noopener noreferrer">https://www.kirincity.co.jp/shop/oji.html</a></p>
+                    <p><strong>ご予約はこちらから:</strong> <a href="https://lin.ee/EhXSI4p" target="_blank" rel="noopener noreferrer">https://lin.ee/EhXSI4p</a></p>
+                </div>
+            </article>
+            <article class="coupon">
+                <span class="coupon-number">3</span>
+                <div class="coupon-header">
+                    <h3 class="store-name">プロント王子店</h3>
+                </div>
+                <img src="http://kitabunka.or.jp/wp/wp-content/uploads/PRONTO_logo2.png" alt="プロント王子店" class="coupon-image">
+                <div class="offer">
+                    <p class="offer-main">【カフェ】コーヒー一杯無料（パスタ注文の方）<br>【キッサカバ】お好きなハイボール1杯</p>
+                </div>
+                <div class="store-info">
+                    <p><strong>住所:</strong> 北区王子1-10-13</p>
+                    <p><strong>TEL:</strong> 03-5390-5570</p>
+                    <p><strong>営業時間:</strong><br>平日・土曜 カフェ7:00~17:30 <br>キッサカバ　17:30-23:00 <br> 日曜・祝日 カフェ　8:00～17:30　<br>キッサカバ　17:30-22:00
+
+                    </p>
+                    <p><strong>HP:</strong> <a href="https://shop.pronto.co.jp/detail/180/" target="_blank" rel="noopener noreferrer">https://shop.pronto.co.jp/detail/180/</a></p>
+                </div>
+                <div class="usage-rules">
+                    <span class="limit">1枚で1名様</span>
+                    <span class="timing order-timing"></span>
+                </div>
+            </article>
+            <article class="coupon">
+                <span class="coupon-number">4</span>
+                <div class="coupon-header">
+                    <h3 class="store-name">フローリストはなきち 駅前店</h3>
+                </div>
+                <img src="http://kitabunka.or.jp/wp/wp-content/uploads/hanakichi.jpg" alt="フローリストはなきち" class="coupon-image">
+                <div class="offer">
+                    <p class="offer-main">お買上げより 10% 割引</p>
+                    <p class="offer-conditions">当日お持ち帰りのみ (予約・配達・ギフト券を除く)</p>
+                </div>
+                <div class="store-info">
+                    <p class="catchphrase">北とびあへのお祝いの花がすぐに対応できます！</p>
+                    <p><strong>住所:</strong> 北区王子1-10-13</p>
+                    <p><strong>TEL:</strong> 03-5390-8783</p>
+                    <p><strong>営業時間:</strong> 9:30~19:00</p>
+                    <p><strong>HP:</strong> <a href="https://www.hanakichi8783.com/" target="_blank" rel="noopener noreferrer">https://www.hanakichi8783.com/</a></p>
+                </div>
+                <div class="usage-rules">
+                    <span class="limit">チケット1枚で1名様</span>
+                    <span class="timing payment-timing"></span>
+                </div>
+            </article>
+
+            <article class="coupon">
+                <span class="coupon-number">5</span>
+                <div class="coupon-header">
+                    <h3 class="store-name">中華料理 桃花園</h3>
+                </div>
+                <img src="http://kitabunka.or.jp/wp/wp-content/uploads/tokaen.jpg" alt="中華料理 桃花園" class="coupon-image">
+                <div class="offer">
+                    <p class="offer-main">ドリンク 1杯無料</p>
+                    <p class="offer-conditions">お食事をご注文の方にウーロン茶またはオレンジジュース</p>
+                </div>
+                <div class="store-info">
+                    <p><strong>住所:</strong> 北区王子1-10-9</p>
+                    <p><strong>TEL:</strong> 03-5390-1770</p>
+                    <p><strong>営業時間:</strong> 11:00~22:00</p>
+                </div>
+                <div class="usage-rules">
+                    <span class="limit">チケット1枚で1名様</span>
+                    <span class="timing order-timing"></span>
+                </div>
+            </article>
+            <article class="coupon store-only">
+                <span class="coupon-number">6</span>
+                <div class="coupon-header">
+                    <h3 class="store-name">とんかつ和幸</h3>
+                </div>
+                <img src="http://kitabunka.or.jp/wp/wp-content/uploads/とんかつ和幸.jpg" alt="とんかつ和幸" class="coupon-image">
+                <p class="catchphrase">とんかつ一筋60年。美味しさの秘密は伝統の技術と厳選した素材にあり。</p>
+                <div class="store-info">
+                    <p><strong>住所:</strong> 北区王子1-10-11</p>
+                    <p><strong>TEL:</strong> 03-5959-6509</p>
+                    <p><strong>営業時間:</strong> 11:00~22:00</p>
+                    <p><strong>HP:</strong> <a href="https://wako-group.co.jp/shop/detai/shop_2128/" target="_blank" rel="noopener noreferrer">https://wako-group.co.jp/shop/detai/shop_2128/</a></p>
+                </div>
+            </article>
+
+
+
+
+            <article class="coupon">
+                <span class="coupon-number">7</span>
+                <div class="coupon-header">
+                    <h3 class="store-name">TAGEN Restaurant & Bar</h3>
+                </div>
+                <img src="http://kitabunka.or.jp/wp/wp-content/uploads/tagen.jpg" alt="tagen" class="coupon-image">
+                <div class="offer">
+                    <p class="offer-main">飲食料 10% 割引</p>
+                    <p class="offer-conditions">17:00以降</p>
+                </div>
+                <div class="store-info">
+                    <p><strong>住所:</strong> 北区王子1-10-9</p>
+                    <p><strong>TEL:</strong> 03-3913-8310</p>
+                    <p><strong>営業時間:</strong> 11:00~22:00</p>
+                    <p><strong>HP:</strong> <a href="https://tagen.jp/" target="_blank" rel="noopener noreferrer">https://tagen.jp/</a></p>
+                </div>
+                <div class="usage-rules">
+                    <span class="limit">チケット1枚で1グループ</span>
+                    <span class="timing order-timing"></span>
+                </div>
+            </article>
+            <article class="coupon">
+                <span class="coupon-number">8</span>
+                <div class="coupon-header">
+                    <h3 class="store-name">141 OUJI TABLE</h3>
+                </div>
+                <img src="http://kitabunka.or.jp/wp/wp-content/uploads/141OUJITABLE.jpg" alt="T141OJI" class="coupon-image">
+                <div class="offer">
+                    <p class="offer-main">グラスドリンク一杯無料</p>
+                    <p class="offer-conditions">お料理をご注文の方に</p>
+                </div>
+                <div class="store-info">
+                    <p><strong>住所:</strong> 北区王子1-4-1 サンスクエア3F</p>
+                    <p><strong>TEL:</strong> 03-5933-6955</p>
+                    <p><strong>営業時間:</strong>
+                        平日: 11:30~15:00、17:00~20:30<br>
+                        土日祝: 11:30~20:00
+                    </p>
+                    <p><strong>HP:</strong> <a href="https://ggxa100.gorp.jp/" target="_blank" rel="noopener noreferrer">https://ggxa100.gorp.jp/</a></p>
+                </div>
+                <div class="usage-rules">
+                    <span class="limit">チケット1枚で1名様</span>
+                    <span class="timing order-timing"></span>
+                </div>
+            </article>
+            <article class="coupon">
+                <span class="coupon-number">9</span>
+                <div class="coupon-header">
+                    <h3 class="store-name">Top's KEY'S CAFE</h3>
+                </div>
+                <img src="http://kitabunka.or.jp/wp/wp-content/uploads/TOPS.jpg" alt="Top's KEY'S CAFE" class="coupon-image">
+                <div class="offer">
+                    <p class="offer-main">コーヒーまたは紅茶一杯無料</p>
+                    <p class="offer-conditions">パスタ・カレーを注文の方</p>
+                </div>
+                <div class="store-info">
+                    <p><strong>住所:</strong> 北区王子1-4-1サンスクエア1F</p>
+                    <p><strong>TEL:</strong> 03-5944-6155</p>
+                    <p><strong>営業時間:</strong><br>平日 6:00~21:00 土日祝 7:00～21:00<br>
+                    </p>
+                    <p><strong>HP:</strong> <a href="https://www.akasaka-tops.co.jp/restaurant/ouji.html" target="_blank" rel="noopener noreferrer">https://www.akasaka-tops.co.jp/restaurant/ouji.html</a></p>
+                </div>
+                <div class="usage-rules">
+                    <span class="limit">1枚で2名様</span>
+                    <span class="timing payment-timing"></span>
+                </div>
+            </article>
+            </main>
+    </div>
+
+    <script>
+        // ページが読み込まれたら実行
+        window.onload = function() {
+            // 今日の日付を取得
+            const today = new Date();
+            const month = today.getMonth() + 1; // getMonth()は0から始まるため+1する
+            const day = today.getDate();
+
+            // 「（本日O月O日のみ有効）」という文字列を作成
+            const dateString = `（本日${month}月${day}日のみ有効）`;
+
+            // スタイルを動的に生成するための<style>タグを作成
+            const style = document.createElement('style');
+            
+            // 新しいCSSルールを定義
+            // 元のテキストの後に、改行(\A)と日付文字列を追加する
+            style.innerHTML = `
+                .usage-rules .timing.order-timing::before {
+                    content: '※注文時にこの画面をご提示ください\\A ${dateString}';
+                    white-space: pre; /* CSSでの改行(\\A)を有効にする */
+                }
+                .usage-rules .timing.payment-timing::before {
+                    content: '※会計時にこの画面をご提示ください\\A ${dateString}';
+                    white-space: pre; /* CSSでの改行(\\A)を有効にする */
+                }
+            `;
+            
+            // HTMLの<head>に新しい<style>タグを追加して、上記のCSSを適用
+            document.head.appendChild(style);
+        };
+    </script>
+
+</body>
+</html>
